@@ -22,8 +22,6 @@ import {
   doc,
   updateDoc,
   deleteDoc,
-  Timestamp,
-  addDoc,
 } from 'firebase/firestore';
 import {
   LogOut,
@@ -33,12 +31,14 @@ import {
   PhoneCall,
   CheckCircle,
   Clock,
-  Filter,
   UserCheck,
   Building,
   BarChart3,
   RefreshCw,
   MessageSquare,
+  Trash2,
+  Sparkles,
+  MapPin,
 } from 'lucide-react';
 
 interface Lead {
@@ -230,20 +230,20 @@ export default function AdminPage() {
 
   if (loadingAuth) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-900 text-white">
-        <div className="flex flex-col items-center gap-4">
-          <RefreshCw className="w-10 h-10 animate-spin text-amber-400" />
-          <p className="text-sm font-medium">Cargando Panel de Administración...</p>
+      <div className="min-h-screen flex items-center justify-center bg-slate-100 text-slate-800">
+        <div className="flex flex-col items-center gap-4 bg-white p-8 rounded-3xl shadow-xl border border-slate-200">
+          <RefreshCw className="w-10 h-10 animate-spin text-purple-600" />
+          <p className="text-sm font-semibold">Cargando Panel de Administración...</p>
         </div>
       </div>
     );
   }
 
-  // 🔒 LOGIN SCREEN
+  // 🔒 LOGIN SCREEN (LIGHT THEME)
   if (!user) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4">
-        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 max-w-md w-full shadow-2xl space-y-6 text-center">
+      <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4">
+        <div className="bg-white border border-slate-200 rounded-3xl p-8 max-w-md w-full shadow-xl space-y-6 text-center">
           {/* Header Logo */}
           <div className="flex justify-center mb-2">
             <img
@@ -254,15 +254,15 @@ export default function AdminPage() {
           </div>
 
           <div className="space-y-2">
-            <h1 className="text-2xl font-bold text-white">Panel de Administración</h1>
-            <p className="text-xs text-slate-400">
+            <h1 className="text-2xl font-bold text-slate-900">Panel de Administración</h1>
+            <p className="text-xs text-slate-500">
               Acceso exclusivo para administradores de Home Fugas (Región de Valparaíso)
             </p>
           </div>
 
           {authError && (
-            <div className="bg-rose-950/80 border border-rose-800 p-4 rounded-xl text-xs text-rose-300 text-left flex items-start gap-2">
-              <ShieldAlert className="w-5 h-5 text-rose-400 flex-shrink-0 mt-0.5" />
+            <div className="bg-rose-50 border border-rose-200 p-4 rounded-xl text-xs text-rose-700 text-left flex items-start gap-2 shadow-sm">
+              <ShieldAlert className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
               <span>{authError}</span>
             </div>
           )}
@@ -270,7 +270,7 @@ export default function AdminPage() {
           {/* Google Sign In Button */}
           <button
             onClick={handleGoogleLogin}
-            className="w-full py-3.5 px-6 bg-white hover:bg-slate-100 text-slate-900 font-bold rounded-xl flex items-center justify-center gap-3 transition shadow-lg text-sm"
+            className="w-full py-3.5 px-6 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl flex items-center justify-center gap-3 transition shadow-lg text-sm"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path
@@ -293,7 +293,7 @@ export default function AdminPage() {
             Iniciar Sesión con Google
           </button>
 
-          <div className="pt-4 border-t border-slate-800 text-[11px] text-slate-500">
+          <div className="pt-4 border-t border-slate-100 text-[11px] text-slate-400 leading-relaxed">
             Correos autorizados: santisoftai@gmail.com, mlelax@gmail.com, spahomefugas@gmail.com
           </div>
         </div>
@@ -301,11 +301,11 @@ export default function AdminPage() {
     );
   }
 
-  // 📊 ADMIN DASHBOARD SCREEN
+  // 📊 ADMIN DASHBOARD SCREEN (WHITE LIGHT THEME)
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans antialiased">
       {/* Top Navbar */}
-      <header className="bg-slate-900 border-b border-slate-800 px-6 py-4 sticky top-0 z-30">
+      <header className="bg-white border-b border-slate-200 px-6 py-3.5 sticky top-0 z-30 shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
@@ -313,23 +313,23 @@ export default function AdminPage() {
               alt="Home Fugas"
               className="h-10 w-auto"
             />
-            <span className="bg-amber-400/10 text-amber-400 border border-amber-400/20 text-xs px-2.5 py-1 rounded-full font-semibold">
+            <span className="bg-purple-50 text-purple-700 border border-purple-200 text-xs px-3 py-1 rounded-full font-bold shadow-xs">
               Panel Admin V Región
             </span>
           </div>
 
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex flex-col text-right">
-              <span className="text-xs font-bold text-white">{user.displayName || 'Administrador'}</span>
-              <span className="text-[11px] text-slate-400">{user.email}</span>
+              <span className="text-xs font-bold text-slate-900">{user.displayName || 'Administrador'}</span>
+              <span className="text-[11px] text-slate-500">{user.email}</span>
             </div>
             <button
               onClick={handleLogout}
-              className="p-2 bg-slate-800 hover:bg-rose-900/50 hover:text-rose-300 text-slate-300 rounded-xl transition flex items-center gap-2 text-xs font-semibold"
+              className="px-3.5 py-2 bg-slate-100 hover:bg-rose-50 hover:text-rose-600 hover:border-rose-200 text-slate-700 border border-slate-200 rounded-xl transition flex items-center gap-2 text-xs font-bold"
               title="Cerrar Sesión"
             >
               <LogOut className="w-4 h-4" />
-              <span className="hidden sm:inline">Salir</span>
+              <span className="hidden sm:inline">Cerrar Sesión</span>
             </button>
           </div>
         </div>
@@ -340,53 +340,64 @@ export default function AdminPage() {
         
         {/* KPI Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-2">
-            <div className="flex items-center justify-between text-slate-400">
-              <span className="text-xs font-semibold uppercase tracking-wider">Total Prospectos</span>
-              <UserCheck className="w-5 h-5 text-sky-400" />
+          
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Prospectos</span>
+              <div className="w-10 h-10 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center font-bold">
+                <UserCheck className="w-5 h-5" />
+              </div>
             </div>
-            <div className="text-3xl font-black text-white">{leads.length}</div>
-            <p className="text-[11px] text-slate-500">Registrados en la plataforma</p>
+            <div className="text-3xl font-black text-slate-900">{leads.length}</div>
+            <p className="text-xs text-slate-500 font-medium">Registrados en la plataforma</p>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-2">
-            <div className="flex items-center justify-between text-slate-400">
-              <span className="text-xs font-semibold uppercase tracking-wider">Nuevos Leads</span>
-              <Clock className="w-5 h-5 text-amber-400" />
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Nuevos Leads</span>
+              <div className="w-10 h-10 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center font-bold">
+                <Clock className="w-5 h-5" />
+              </div>
             </div>
-            <div className="text-3xl font-black text-amber-400">
+            <div className="text-3xl font-black text-amber-600">
               {leads.filter((l) => (l.status || 'Nuevo') === 'Nuevo').length}
             </div>
-            <p className="text-[11px] text-amber-500/80">Requieren atención rápida</p>
+            <p className="text-xs text-amber-700 font-medium">Pendientes por contactar</p>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-2">
-            <div className="flex items-center justify-between text-slate-400">
-              <span className="text-xs font-semibold uppercase tracking-wider">Comunas V Región</span>
-              <Building className="w-5 h-5 text-emerald-400" />
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Comunas V Región</span>
+              <div className="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center font-bold">
+                <Building className="w-5 h-5" />
+              </div>
             </div>
-            <div className="text-3xl font-black text-emerald-400">
+            <div className="text-3xl font-black text-emerald-600">
               {new Set(leads.map((l) => l.commune || 'Viña del Mar')).size}
             </div>
-            <p className="text-[11px] text-slate-500">Comunas activas solicitadas</p>
+            <p className="text-xs text-slate-500 font-medium">Comunas activas solicitadas</p>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-2">
-            <div className="flex items-center justify-between text-slate-400">
-              <span className="text-xs font-semibold uppercase tracking-wider">Google Analytics</span>
-              <BarChart3 className="w-5 h-5 text-purple-400" />
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Google Analytics</span>
+              <div className="w-10 h-10 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center font-bold">
+                <BarChart3 className="w-5 h-5" />
+              </div>
             </div>
-            <div className="text-sm font-bold text-white flex items-center gap-1.5 pt-1">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <div className="text-sm font-bold text-slate-900 flex items-center gap-2 pt-1">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
               G-ZX5SBTWNE9
             </div>
-            <p className="text-[11px] text-slate-500">Midiendo conversiones en vivo</p>
+            <p className="text-xs text-slate-500 font-medium">Midiendo conversiones en vivo</p>
           </div>
+
         </div>
 
         {/* Toolbar: Search, Filters & CSV Export */}
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col md:flex-row gap-4 items-center justify-between">
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto flex-1">
+            
             {/* Search Input */}
             <div className="relative flex-1">
               <Search className="w-4 h-4 absolute left-3.5 top-3.5 text-slate-400" />
@@ -395,7 +406,7 @@ export default function AdminPage() {
                 placeholder="Buscar por nombre, teléfono o email..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400 transition"
+                className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition font-medium"
               />
             </div>
 
@@ -404,7 +415,7 @@ export default function AdminPage() {
               <select
                 value={selectedCommune}
                 onChange={(e) => setSelectedCommune(e.target.value)}
-                className="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400 transition cursor-pointer"
+                className="bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition cursor-pointer"
               >
                 <option value="Todas">Todas las Comunas</option>
                 <option value="Viña del Mar">Viña del Mar</option>
@@ -424,7 +435,7 @@ export default function AdminPage() {
               <select
                 value={selectedStatus}
                 onChange={(e) => setSelectedStatus(e.target.value)}
-                className="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400 transition cursor-pointer"
+                className="bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition cursor-pointer"
               >
                 <option value="Todos">Todos los Estados</option>
                 <option value="Nuevo">Nuevo</option>
@@ -433,12 +444,13 @@ export default function AdminPage() {
                 <option value="Cerrado">Cerrado</option>
               </select>
             </div>
+
           </div>
 
           {/* Export CSV Button */}
           <button
             onClick={exportToCSV}
-            className="w-full md:w-auto px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition shadow-md whitespace-nowrap"
+            className="w-full md:w-auto px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition shadow-md whitespace-nowrap cursor-pointer"
           >
             <Download className="w-4 h-4" />
             Exportar CSV ({filteredLeads.length})
@@ -446,10 +458,10 @@ export default function AdminPage() {
         </div>
 
         {/* Table of Leads */}
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+        <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-md">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs sm:text-sm text-slate-300">
-              <thead className="bg-slate-950 text-slate-400 uppercase text-[11px] font-bold border-b border-slate-800">
+            <table className="w-full text-left text-xs sm:text-sm text-slate-700">
+              <thead className="bg-slate-100/80 text-slate-700 uppercase text-[11px] font-bold border-b border-slate-200 tracking-wider">
                 <tr>
                   <th className="px-5 py-4">Fecha</th>
                   <th className="px-5 py-4">Nombre / Contacto</th>
@@ -458,11 +470,11 @@ export default function AdminPage() {
                   <th className="px-5 py-4 text-center">Acción Directa</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60">
+              <tbody className="divide-y divide-slate-200/80">
                 {loadingLeads ? (
                   <tr>
                     <td colSpan={5} className="text-center py-12 text-slate-500">
-                      <RefreshCw className="w-6 h-6 animate-spin mx-auto mb-2 text-amber-400" />
+                      <RefreshCw className="w-6 h-6 animate-spin mx-auto mb-2 text-purple-600" />
                       Cargando prospectos en tiempo real...
                     </td>
                   </tr>
@@ -474,38 +486,40 @@ export default function AdminPage() {
                   </tr>
                 ) : (
                   filteredLeads.map((lead) => (
-                    <tr key={lead.id} className="hover:bg-slate-800/40 transition">
-                      <td className="px-5 py-4 text-slate-400 text-xs whitespace-nowrap">
+                    <tr key={lead.id} className="hover:bg-slate-50/80 transition">
+                      <td className="px-5 py-4 text-slate-500 text-xs font-medium whitespace-nowrap">
                         {formatDate(lead.createdAt)}
                       </td>
                       <td className="px-5 py-4 space-y-1">
-                        <div className="font-bold text-white text-sm">{lead.name}</div>
-                        <div className="text-xs text-slate-400 flex items-center gap-2">
-                          <span>📞 {lead.phone}</span>
-                          {lead.email && <span className="text-slate-500">| ✉️ {lead.email}</span>}
+                        <div className="font-bold text-slate-900 text-sm">{lead.name}</div>
+                        <div className="text-xs text-slate-500 flex items-center gap-2">
+                          <span className="font-medium text-slate-700">📞 {lead.phone}</span>
+                          {lead.email && <span className="text-slate-400">| ✉️ {lead.email}</span>}
                         </div>
                       </td>
-                      <td className="px-5 py-4 font-medium text-amber-300">
-                        📍 {lead.commune || 'V Región'}
+                      <td className="px-5 py-4 font-semibold text-slate-800">
+                        <span className="inline-flex items-center gap-1 bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg text-xs border border-slate-200">
+                          📍 {lead.commune || 'V Región'}
+                        </span>
                       </td>
                       <td className="px-5 py-4">
                         <select
                           value={lead.status || 'Nuevo'}
                           onChange={(e) => handleStatusChange(lead.id, e.target.value)}
-                          className={`text-xs px-2.5 py-1 rounded-full border font-bold cursor-pointer transition ${
+                          className={`text-xs px-3 py-1.5 rounded-full border font-bold cursor-pointer transition shadow-xs ${
                             (lead.status || 'Nuevo') === 'Nuevo'
-                              ? 'bg-amber-950/80 border-amber-600 text-amber-300'
+                              ? 'bg-amber-100 border-amber-300 text-amber-800'
                               : lead.status === 'Contactado'
-                              ? 'bg-sky-950/80 border-sky-600 text-sky-300'
+                              ? 'bg-sky-100 border-sky-300 text-sky-800'
                               : lead.status === 'Cotizado'
-                              ? 'bg-purple-950/80 border-purple-600 text-purple-300'
-                              : 'bg-emerald-950/80 border-emerald-600 text-emerald-300'
+                              ? 'bg-purple-100 border-purple-300 text-purple-800'
+                              : 'bg-emerald-100 border-emerald-300 text-emerald-800'
                           }`}
                         >
-                          <option value="Nuevo" className="bg-slate-900 text-white">● Nuevo</option>
-                          <option value="Contactado" className="bg-slate-900 text-white">● Contactado</option>
-                          <option value="Cotizado" className="bg-slate-900 text-white">● Cotizado</option>
-                          <option value="Cerrado" className="bg-slate-900 text-white">● Cerrado</option>
+                          <option value="Nuevo" className="bg-white text-slate-900">● Nuevo</option>
+                          <option value="Contactado" className="bg-white text-slate-900">● Contactado</option>
+                          <option value="Cotizado" className="bg-white text-slate-900">● Cotizado</option>
+                          <option value="Cerrado" className="bg-white text-slate-900">● Cerrado</option>
                         </select>
                       </td>
                       <td className="px-5 py-4 text-center">
@@ -515,7 +529,7 @@ export default function AdminPage() {
                             href={`https://api.whatsapp.com/send?phone=${lead.phone.replace(/[^0-9]/g, '')}&text=Hola%20${encodeURIComponent(lead.name)},%20te%20contactamos%20de%20Home%20Fugas%20respecto%20a%20tu%20solicitud%20en%20${encodeURIComponent(lead.commune || 'la V Región')}.`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-lg flex items-center gap-1.5 transition shadow"
+                            className="px-3.5 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition shadow-sm"
                             title="Hablar por WhatsApp"
                           >
                             <MessageSquare className="w-3.5 h-3.5" />
@@ -525,10 +539,10 @@ export default function AdminPage() {
                           {/* Delete Lead Button */}
                           <button
                             onClick={() => handleDeleteLead(lead.id)}
-                            className="p-1.5 text-slate-500 hover:text-rose-400 hover:bg-rose-950/40 rounded-lg transition"
+                            className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition"
                             title="Eliminar Lead"
                           >
-                            ✕
+                            <Trash2 className="w-4 h-4" />
                           </button>
                         </div>
                       </td>
