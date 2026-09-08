@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TX895956");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <title>Home Fugas - Detección Y Reparación de Fugas de Agua</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Detectamos fugas de agua en casas, piscinas, calefacción y tuberías. Atención inmediata en la Región Metropolitana y Valparaíso."
+    />
+    <link rel="icon" href="assets/images/favicon.png" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+
+  <body class="text-gray-700 bg-gray-100">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TX895956"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+
+    <!-- Hero -->
+    <div
+      class="py-8 bg-radial-[at_50%_25%] from-10% from-primary to-200% md:to-120% to-[#FFB800] md:bg-radial-[at_30%_50%]"
+    >
+      <div
+        class="absolute inset-0 bg-[url('images/hero-mobile-bg.png')] md:bg-[url('images/hero-desktop-bg.png')] bg-cover bg-center"
+      ></div>
+      <div
+        class="container relative z-10 flex flex-col gap-24 md:pt-5 md:pb-20 md:gap-16"
+      >
+        <header class="flex justify-between items-center">
+          <img src="assets/images/home-fugas-logo.svg" alt="Logo Home Fugas" />
+          <a
+            id="whatsApp-button"
+            target="_blank"
+            class="px-6 py-4 rounded-full cursor-pointer bg-green-500 hover:bg-green-600 border border-green-900"
+            href="https://api.whatsapp.com/send?phone=56966139505"
+          >
+            <img
+              class="w-24"
+              src="assets/images/whatsapp-logo.svg"
+              alt="WhatsApp Logo"
+            />
+          </a>
+        </header>
+        <main
+          class="flex flex-col gap-12 md:flex-row md:items-center md:justify-between md:gap-20"
+        >
+          <!-- Hero content -->
+          <div class="flex flex-col gap-6 text-white">
+            <h1 class="text-5xl font-bold text-center md:text-left">
+              Detección y Reparación de Fugas de Agua Sin Romper
+            </h1>
+            <p class="text-lg text-center md:text-left">
+              Detectamos fugas de agua en casas, piscinas, calefacción y
+              tuberías. Atención inmediata en la Región Metropolitana y
+              Valparaíso.
+            </p>
+            <div
+              class="flex flex-wrap justify-center gap-1 md:justify-start md:gap-2"
+            >
+              <span class="px-2 py-1 text-sm border border-white rounded-full"
+                >Ultrasonido</span
+              >
+              <span class="px-2 py-1 text-sm border border-white rounded-full"
+                >Gas Trazador</span
+              >
+              <span class="px-2 py-1 text-sm border border-white rounded-full"
+                >Cámara Termográfica</span
+              >
+            </div>
+          </div>
+
+          <!-- Lead form -->
+          <div
+            class="flex flex-col h-full gap-6 px-8 py-10 bg-white shadow-lg rounded-3xl md:min-w-sm min-h-[32rem] justify-center"
+            id="lead-form"
+          >
+            <div class="hidden flex-col gap-8" id="lead-form-sent-feedback">
+              <div class="flex flex-col items-center gap-6">
+                <svg
+                  class="w-24 stroke-primary"
+                  viewBox="0 0 26 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.6668 9L10.3333 18.3333L6.33333 14.3333M25 13C25 19.6275 19.6275 25 13 25C6.37259 25 1 19.6275 1 13C1 6.37259 6.37259 1 13 1C19.6275 1 25 6.37259 25 13Z"
+                  />
+                </svg>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-2xl font-bold text-center">
+                    ¡Recibimos tus datos!
+                  </h2>
+                  <p class="text-center">
+                    Nos pondremos en contacto contigo en unos minutos.
+                  </p>
+                </div>
+              </div>
+
+              <p class="text-center">
+                ¿Tienes una emergencia? <br />
+                <a
+                  href="https://api.whatsapp.com/send?phone=56966139505"
+                  class="text-accent"
+                  >Escríbenos por WhatsApp</a
+                >
+              </p>
+            </div>
+
+            <div id="lead-form-main-content" class="flex flex-col gap-6">
+              <div class="flex flex-col gap-2">
+                <h2 class="text-2xl font-bold text-center">
+                  Agenda tu visita ahora
+                </h2>
+                <p class="text-center">
+                  Te contactaremos en menos de 5 minutos
+                </p>
+              </div>
+
+              <div
+                class="hidden px-3 py-2 text-red-500 bg-red-200 border border-red-500 rounded-lg"
+                id="lead-form-error-feedback"
+              >
+                Se produjo un error. Por favor, inténtalo nuevamente.
+              </div>
+
+              <form action="" autocomplete="on" class="flex flex-col gap-4">
+                <div class="flex flex-col gap-2">
+                  <label for="name"
+                    >Nombre<span class="text-red-500">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    minlength="5"
+                    maxlength="40"
+                    class="p-3 border border-gray-200 rounded-lg outline-none bg-gray-50 focus:ring-2 ring-primary"
+                    required
+                    placeholder="Ingresa tu nombre"
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="phone"
+                    >Teléfono<span class="text-red-500">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    value="+56"
+                    pattern="^\+56\d{9}$"
+                    class="p-3 border border-gray-200 rounded-lg outline-none bg-gray-50 focus:ring-2 ring-primary"
+                    maxlength="12"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="email">Correo electrónico</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    maxlength="100"
+                    class="p-3 border border-gray-200 rounded-lg outline-none bg-gray-50 focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="px-5 py-4 text-white rounded-full shadow-lg cursor-pointer bg-primary hover:bg-primary/90"
+                >
+                  Quiero que me contacten
+                </button>
+              </form>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Dolors -->
+    <div class="container flex flex-col gap-10 py-20 md:gap-14">
+      <!-- Section title -->
+      <div class="flex flex-col gap-6 md:gap-2">
+        <h2 class="text-3xl font-bold text-center">
+          Cada día que pasa, <span class="text-primary">el problema crece</span>
+        </h2>
+        <p class="text-center">
+          No dejes que una fuga se convierta en un daño costoso. Actúa antes de
+          que el problema empeore.
+        </p>
+      </div>
+
+      <!-- Section content -->
+      <div class="flex flex-col gap-8 md:flex-row">
+        <div
+          class="flex flex-col items-center gap-6 px-6 py-10 bg-white shadow-md rounded-2xl"
+        >
+          <img
+            src="assets/images/confused-man.png"
+            alt="Persona preocupada por la humedad de la pared"
+            class="rounded-full"
+          />
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl font-bold text-center">1. Humedad y Hongos</h3>
+            <p class="text-center">
+              La humedad mancha paredes y genera mal olor. Es el primer indicio.
+              El moho puede afectar la salud de tu familia.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col items-center gap-6 px-6 py-10 bg-white shadow-md rounded-2xl"
+        >
+          <img
+            src="assets/images/person-looking-at-water-leak.png"
+            alt="Persona preocupada por la filtración de agua"
+            class="rounded-full"
+          />
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl font-bold text-center">
+              2. Daños por corrosión
+            </h3>
+            <p class="text-center">
+              Las fugas dañan cañerías y conexiones, provocando reparaciones
+              costosas si no se detectan a tiempo.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col items-center gap-6 px-6 py-10 bg-white shadow-md rounded-2xl"
+        >
+          <img
+            src="assets/images/person-looking-at-water-bill.png"
+            alt="Persona preocupada por cuenta del agua"
+            class="rounded-full"
+          />
+          <div class="flex flex-col gap-2">
+            <h3 class="text-xl font-bold text-center">3. Más gasto en agua</h3>
+            <p class="text-center">
+              Además del gasto por reparación tardía, el agua que se pierde
+              aumenta tu boleta del agua sin que lo notes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solution -->
+    <div class="bg-white">
+      <div
+        class="container flex flex-col gap-10 py-20 md:gap-14 md:flex-row md:items-center"
+      >
+        <!-- Section title -->
+        <div class="flex flex-col gap-6 md:gap-2">
+          <h2 class="text-3xl font-bold text-center md:text-left">
+            Somos la
+            <span class="text-primary">solución más efectiva</span> para
+            detectar fugas de agua
+          </h2>
+          <p class="text-center md:text-left">
+            Detectamos y reparamos cualquier fuga con tecnología avanzada,
+            protegiendo tu hogar, tu salud y tu bolsillo al instante.
+          </p>
+        </div>
+
+        <!-- Section content -->
+        <div class="relative">
+          <div
+            class="absolute inset-0 hidden bg-accent rounded-3xl rotate-6 md:block"
+          ></div>
+          <div
+            class="relative z-10 flex flex-col px-8 py-12 shadow-lg bg-primary rounded-3xl gap-9"
+          >
+            <div class="flex items-start gap-4">
+              <img
+                src="assets/images/check-icon.svg"
+                alt="Ícono de check"
+                class="mt-1"
+              />
+              <div class="flex flex-col gap-2">
+                <h3 class="text-xl font-bold text-white">Sin romper paredes</h3>
+                <p class="text-white">
+                  Localizamos la fuga con precisión sin dañar tu hogar.
+                </p>
+              </div>
+            </div>
+            <div class="w-full h-px bg-white/20"></div>
+            <div class="flex items-start gap-4">
+              <img
+                src="assets/images/check-icon.svg"
+                alt="Ícono de check"
+                class="mt-1"
+              />
+              <div class="flex flex-col gap-2">
+                <h3 class="text-xl font-bold text-white">
+                  Reparación inmediata
+                </h3>
+                <p class="text-white">
+                  Solucionamos el problema al momento para que tu vida siga
+                  normal.
+                </p>
+              </div>
+            </div>
+            <div class="w-full h-px bg-white/20"></div>
+            <div class="flex items-start gap-4">
+              <img
+                src="assets/images/check-icon.svg"
+                alt="Ícono de check"
+                class="mt-1"
+              />
+              <div class="flex flex-col gap-2">
+                <h3 class="text-xl font-bold text-white">Ahorra dinero</h3>
+                <p class="text-white">
+                  Reduce tu consumo de agua y evita gastos innecesarios.
+                </p>
+              </div>
+            </div>
+            <div class="w-full h-px bg-white/20"></div>
+            <div class="flex items-start gap-4">
+              <img
+                src="assets/images/check-icon.svg"
+                alt="Ícono de check"
+                class="mt-1"
+              />
+              <div class="flex flex-col gap-2">
+                <h3 class="text-xl font-bold text-white">Protege tu salud</h3>
+                <p class="text-white">
+                  Evita moho y hongos que afectan a tu familia.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonies -->
+    <div class="container flex flex-col gap-10 py-20 md:gap-14">
+      <!-- Section title -->
+      <div class="flex flex-col gap-6 md:gap-2">
+        <h2 class="text-3xl font-bold text-center">
+          Nos recomiendan <span class="text-primary">quienes ya confiaron</span>
+        </h2>
+        <p class="text-center">
+          La mayoría de nuestros nuevos clientes llegan por recomendación. Estas
+          son algunas de sus experiencias.
+        </p>
+      </div>
+
+      <!-- Testimonies -->
+      <div class="flex flex-col gap-8 md:flex-row">
+        <!-- Testimony -->
+        <div
+          class="flex flex-col flex-1 gap-2 px-6 py-10 bg-white shadow-md rounded-2xl"
+        >
+          <div class="flex gap-2">
+            <img
+              src="assets/images/marcela-puebla-testimony-photo.png"
+              alt="Cliente Marcela Puebla"
+              class="w-12 h-12 rounded-full"
+            />
+            <div class="flex flex-col gap-1">
+              <h3 class="text-lg font-bold">Marcela Puebla</h3>
+              <div class="flex gap-1">
+                <svg
+                  width="96"
+                  height="16"
+                  viewBox="0 0 96 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M15.966 5.78729C15.8747 5.50777 15.6159 5.31953 15.3213 5.31953H10.221L8.64552 0.4687C8.55328 0.189167 8.29446 0 7.99987 0C7.70623 0 7.44645 0.188233 7.35516 0.468708L5.77869 5.31953H0.678458C0.383875 5.31953 0.125042 5.50777 0.03375 5.78729C-0.0575417 6.06682 0.0403333 6.37177 0.2794 6.54588L4.40646 9.54447L2.82998 14.3962C2.73869 14.6767 2.8394 14.9817 3.07846 15.1539C3.19704 15.2395 3.33634 15.2829 3.47563 15.2829C3.61493 15.2829 3.75423 15.2395 3.87375 15.1529L7.99987 12.1553L12.125 15.1529C12.3632 15.3261 12.6841 15.3261 12.9222 15.1539C13.1613 14.9817 13.261 14.6767 13.1698 14.3953L11.5933 9.54447L15.7213 6.54588C15.9594 6.37177 16.0582 6.06682 15.966 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M35.9661 5.78729C35.8748 5.50777 35.616 5.31953 35.3214 5.31953H30.2212L28.6456 0.4687C28.5534 0.189167 28.2946 0 28 0C27.7063 0 27.4466 0.188233 27.3553 0.468708L25.7788 5.31953H20.6786C20.384 5.31953 20.1252 5.50777 20.0339 5.78729C19.9426 6.06682 20.0405 6.37177 20.2795 6.54588L24.4066 9.54447L22.8301 14.3962C22.7388 14.6767 22.8395 14.9817 23.0786 15.1539C23.1972 15.2395 23.3365 15.2829 23.4757 15.2829C23.615 15.2829 23.7543 15.2395 23.8739 15.1529L28 12.1553L32.1252 15.1529C32.3633 15.3261 32.6842 15.3261 32.9223 15.1539C33.1614 14.9817 33.2612 14.6767 33.1699 14.3953L31.5934 9.54447L35.7214 6.54588C35.9595 6.37177 36.0583 6.06682 35.9661 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M55.9663 5.78729C55.875 5.50777 55.6162 5.31953 55.3216 5.31953H50.2213L48.6458 0.4687C48.5536 0.189167 48.2948 0 48.0002 0C47.7065 0 47.4468 0.188233 47.3555 0.468708L45.779 5.31953H40.6788C40.3842 5.31953 40.1253 5.50777 40.0341 5.78729C39.9428 6.06682 40.0406 6.37177 40.2797 6.54588L44.4068 9.54447L42.8303 14.3962C42.739 14.6767 42.8397 14.9817 43.0788 15.1539C43.1973 15.2395 43.3366 15.2829 43.4759 15.2829C43.6152 15.2829 43.7545 15.2395 43.8741 15.1529L48.0002 12.1553L52.1253 15.1529C52.3635 15.3261 52.6844 15.3261 52.9225 15.1539C53.1616 14.9817 53.2613 14.6767 53.1701 14.3953L51.5936 9.54447L55.7216 6.54588C55.9597 6.37177 56.0585 6.06682 55.9663 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M75.9664 5.78729C75.8751 5.50777 75.6163 5.31953 75.3217 5.31953H70.2215L68.6459 0.4687C68.5537 0.189167 68.2949 0 68.0003 0C67.7067 0 67.4469 0.188233 67.3556 0.468708L65.7791 5.31953H60.6789C60.3843 5.31953 60.1255 5.50777 60.0342 5.78729C59.9429 6.06682 60.0408 6.37177 60.2798 6.54588L64.4069 9.54447L62.8304 14.3962C62.7391 14.6767 62.8398 14.9817 63.0789 15.1539C63.1975 15.2395 63.3368 15.2829 63.4761 15.2829C63.6154 15.2829 63.7547 15.2395 63.8742 15.1529L68.0003 12.1553L72.1255 15.1529C72.3636 15.3261 72.6845 15.3261 72.9227 15.1539C73.1617 14.9817 73.2615 14.6767 73.1702 14.3953L71.5937 9.54447L75.7217 6.54588C75.9598 6.37177 76.0587 6.06682 75.9664 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M95.9666 5.78729C95.8753 5.50777 95.6165 5.31953 95.3219 5.31953H90.2217L88.6461 0.4687C88.5539 0.189167 88.2951 0 88.0005 0C87.7068 0 87.4471 0.188233 87.3558 0.468708L85.7793 5.31953H80.6791C80.3845 5.31953 80.1257 5.50777 80.0344 5.78729C79.9431 6.06682 80.0409 6.37177 80.28 6.54588L84.4071 9.54447L82.8306 14.3962C82.7393 14.6767 82.84 14.9817 83.0791 15.1539C83.1977 15.2395 83.337 15.2829 83.4762 15.2829C83.6155 15.2829 83.7548 15.2395 83.8744 15.1529L88.0005 12.1553L92.1257 15.1529C92.3638 15.3261 92.6847 15.3261 92.9228 15.1539C93.1619 14.9817 93.2617 14.6767 93.1704 14.3953L91.5939 9.54447L95.7219 6.54588C95.96 6.37177 96.0588 6.06682 95.9666 5.78729Z"
+                    fill="#FFB300"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p>
+            Conforme con el trabajo realizado en mi departamento, tenía una fuga
+            importante, detectable sólo con instrumentos especiales.
+          </p>
+        </div>
+
+        <!-- Testimony -->
+        <div
+          class="flex flex-col flex-1 gap-2 px-6 py-10 bg-white shadow-md rounded-2xl"
+        >
+          <div class="flex gap-2">
+            <img
+              src="assets/images/fernando-urrutia-testimony-photo.png"
+              alt="Cliente Fernando Urrutia"
+              class="w-12 h-12 rounded-full"
+            />
+            <div class="flex flex-col gap-1">
+              <h3 class="text-lg font-bold">Fernando Urrutia</h3>
+              <div class="flex gap-1">
+                <svg
+                  width="96"
+                  height="16"
+                  viewBox="0 0 96 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M15.966 5.78729C15.8747 5.50777 15.6159 5.31953 15.3213 5.31953H10.221L8.64552 0.4687C8.55328 0.189167 8.29446 0 7.99987 0C7.70623 0 7.44645 0.188233 7.35516 0.468708L5.77869 5.31953H0.678458C0.383875 5.31953 0.125042 5.50777 0.03375 5.78729C-0.0575417 6.06682 0.0403333 6.37177 0.2794 6.54588L4.40646 9.54447L2.82998 14.3962C2.73869 14.6767 2.8394 14.9817 3.07846 15.1539C3.19704 15.2395 3.33634 15.2829 3.47563 15.2829C3.61493 15.2829 3.75423 15.2395 3.87375 15.1529L7.99987 12.1553L12.125 15.1529C12.3632 15.3261 12.6841 15.3261 12.9222 15.1539C13.1613 14.9817 13.261 14.6767 13.1698 14.3953L11.5933 9.54447L15.7213 6.54588C15.9594 6.37177 16.0582 6.06682 15.966 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M35.9661 5.78729C35.8748 5.50777 35.616 5.31953 35.3214 5.31953H30.2212L28.6456 0.4687C28.5534 0.189167 28.2946 0 28 0C27.7063 0 27.4466 0.188233 27.3553 0.468708L25.7788 5.31953H20.6786C20.384 5.31953 20.1252 5.50777 20.0339 5.78729C19.9426 6.06682 20.0405 6.37177 20.2795 6.54588L24.4066 9.54447L22.8301 14.3962C22.7388 14.6767 22.8395 14.9817 23.0786 15.1539C23.1972 15.2395 23.3365 15.2829 23.4757 15.2829C23.615 15.2829 23.7543 15.2395 23.8739 15.1529L28 12.1553L32.1252 15.1529C32.3633 15.3261 32.6842 15.3261 32.9223 15.1539C33.1614 14.9817 33.2612 14.6767 33.1699 14.3953L31.5934 9.54447L35.7214 6.54588C35.9595 6.37177 36.0583 6.06682 35.9661 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M55.9663 5.78729C55.875 5.50777 55.6162 5.31953 55.3216 5.31953H50.2213L48.6458 0.4687C48.5536 0.189167 48.2948 0 48.0002 0C47.7065 0 47.4468 0.188233 47.3555 0.468708L45.779 5.31953H40.6788C40.3842 5.31953 40.1253 5.50777 40.0341 5.78729C39.9428 6.06682 40.0406 6.37177 40.2797 6.54588L44.4068 9.54447L42.8303 14.3962C42.739 14.6767 42.8397 14.9817 43.0788 15.1539C43.1973 15.2395 43.3366 15.2829 43.4759 15.2829C43.6152 15.2829 43.7545 15.2395 43.8741 15.1529L48.0002 12.1553L52.1253 15.1529C52.3635 15.3261 52.6844 15.3261 52.9225 15.1539C53.1616 14.9817 53.2613 14.6767 53.1701 14.3953L51.5936 9.54447L55.7216 6.54588C55.9597 6.37177 56.0585 6.06682 55.9663 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M75.9664 5.78729C75.8751 5.50777 75.6163 5.31953 75.3217 5.31953H70.2215L68.6459 0.4687C68.5537 0.189167 68.2949 0 68.0003 0C67.7067 0 67.4469 0.188233 67.3556 0.468708L65.7791 5.31953H60.6789C60.3843 5.31953 60.1255 5.50777 60.0342 5.78729C59.9429 6.06682 60.0408 6.37177 60.2798 6.54588L64.4069 9.54447L62.8304 14.3962C62.7391 14.6767 62.8398 14.9817 63.0789 15.1539C63.1975 15.2395 63.3368 15.2829 63.4761 15.2829C63.6154 15.2829 63.7547 15.2395 63.8742 15.1529L68.0003 12.1553L72.1255 15.1529C72.3636 15.3261 72.6845 15.3261 72.9227 15.1539C73.1617 14.9817 73.2615 14.6767 73.1702 14.3953L71.5937 9.54447L75.7217 6.54588C75.9598 6.37177 76.0587 6.06682 75.9664 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M95.9666 5.78729C95.8753 5.50777 95.6165 5.31953 95.3219 5.31953H90.2217L88.6461 0.4687C88.5539 0.189167 88.2951 0 88.0005 0C87.7068 0 87.4471 0.188233 87.3558 0.468708L85.7793 5.31953H80.6791C80.3845 5.31953 80.1257 5.50777 80.0344 5.78729C79.9431 6.06682 80.0409 6.37177 80.28 6.54588L84.4071 9.54447L82.8306 14.3962C82.7393 14.6767 82.84 14.9817 83.0791 15.1539C83.1977 15.2395 83.337 15.2829 83.4762 15.2829C83.6155 15.2829 83.7548 15.2395 83.8744 15.1529L88.0005 12.1553L92.1257 15.1529C92.3638 15.3261 92.6847 15.3261 92.9228 15.1539C93.1619 14.9817 93.2617 14.6767 93.1704 14.3953L91.5939 9.54447L95.7219 6.54588C95.96 6.37177 96.0588 6.06682 95.9666 5.78729Z"
+                    fill="#FFB300"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p>
+            Vinieron a mi casa maestros responsables que cumplieron lo que
+            dijeron en los dos días que me tuvieron que visitar.
+          </p>
+        </div>
+
+        <!-- Testimony -->
+        <div
+          class="flex flex-col flex-1 gap-2 px-6 py-10 bg-white shadow-md rounded-2xl"
+        >
+          <div class="flex gap-2">
+            <img
+              src="assets/images/antonia-soto-testimony-photo.png"
+              alt="Cliente Antonia Soto"
+              class="w-12 h-12 rounded-full"
+            />
+            <div class="flex flex-col gap-1">
+              <h3 class="text-lg font-bold">Antonia Soto</h3>
+              <div class="flex gap-1">
+                <svg
+                  width="96"
+                  height="16"
+                  viewBox="0 0 96 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M15.966 5.78729C15.8747 5.50777 15.6159 5.31953 15.3213 5.31953H10.221L8.64552 0.4687C8.55328 0.189167 8.29446 0 7.99987 0C7.70623 0 7.44645 0.188233 7.35516 0.468708L5.77869 5.31953H0.678458C0.383875 5.31953 0.125042 5.50777 0.03375 5.78729C-0.0575417 6.06682 0.0403333 6.37177 0.2794 6.54588L4.40646 9.54447L2.82998 14.3962C2.73869 14.6767 2.8394 14.9817 3.07846 15.1539C3.19704 15.2395 3.33634 15.2829 3.47563 15.2829C3.61493 15.2829 3.75423 15.2395 3.87375 15.1529L7.99987 12.1553L12.125 15.1529C12.3632 15.3261 12.6841 15.3261 12.9222 15.1539C13.1613 14.9817 13.261 14.6767 13.1698 14.3953L11.5933 9.54447L15.7213 6.54588C15.9594 6.37177 16.0582 6.06682 15.966 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M35.9661 5.78729C35.8748 5.50777 35.616 5.31953 35.3214 5.31953H30.2212L28.6456 0.4687C28.5534 0.189167 28.2946 0 28 0C27.7063 0 27.4466 0.188233 27.3553 0.468708L25.7788 5.31953H20.6786C20.384 5.31953 20.1252 5.50777 20.0339 5.78729C19.9426 6.06682 20.0405 6.37177 20.2795 6.54588L24.4066 9.54447L22.8301 14.3962C22.7388 14.6767 22.8395 14.9817 23.0786 15.1539C23.1972 15.2395 23.3365 15.2829 23.4757 15.2829C23.615 15.2829 23.7543 15.2395 23.8739 15.1529L28 12.1553L32.1252 15.1529C32.3633 15.3261 32.6842 15.3261 32.9223 15.1539C33.1614 14.9817 33.2612 14.6767 33.1699 14.3953L31.5934 9.54447L35.7214 6.54588C35.9595 6.37177 36.0583 6.06682 35.9661 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M55.9663 5.78729C55.875 5.50777 55.6162 5.31953 55.3216 5.31953H50.2213L48.6458 0.4687C48.5536 0.189167 48.2948 0 48.0002 0C47.7065 0 47.4468 0.188233 47.3555 0.468708L45.779 5.31953H40.6788C40.3842 5.31953 40.1253 5.50777 40.0341 5.78729C39.9428 6.06682 40.0406 6.37177 40.2797 6.54588L44.4068 9.54447L42.8303 14.3962C42.739 14.6767 42.8397 14.9817 43.0788 15.1539C43.1973 15.2395 43.3366 15.2829 43.4759 15.2829C43.6152 15.2829 43.7545 15.2395 43.8741 15.1529L48.0002 12.1553L52.1253 15.1529C52.3635 15.3261 52.6844 15.3261 52.9225 15.1539C53.1616 14.9817 53.2613 14.6767 53.1701 14.3953L51.5936 9.54447L55.7216 6.54588C55.9597 6.37177 56.0585 6.06682 55.9663 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M75.9664 5.78729C75.8751 5.50777 75.6163 5.31953 75.3217 5.31953H70.2215L68.6459 0.4687C68.5537 0.189167 68.2949 0 68.0003 0C67.7067 0 67.4469 0.188233 67.3556 0.468708L65.7791 5.31953H60.6789C60.3843 5.31953 60.1255 5.50777 60.0342 5.78729C59.9429 6.06682 60.0408 6.37177 60.2798 6.54588L64.4069 9.54447L62.8304 14.3962C62.7391 14.6767 62.8398 14.9817 63.0789 15.1539C63.1975 15.2395 63.3368 15.2829 63.4761 15.2829C63.6154 15.2829 63.7547 15.2395 63.8742 15.1529L68.0003 12.1553L72.1255 15.1529C72.3636 15.3261 72.6845 15.3261 72.9227 15.1539C73.1617 14.9817 73.2615 14.6767 73.1702 14.3953L71.5937 9.54447L75.7217 6.54588C75.9598 6.37177 76.0587 6.06682 75.9664 5.78729Z"
+                    fill="#FFB300"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M95.9666 5.78729C95.8753 5.50777 95.6165 5.31953 95.3219 5.31953H90.2217L88.6461 0.4687C88.5539 0.189167 88.2951 0 88.0005 0C87.7068 0 87.4471 0.188233 87.3558 0.468708L85.7793 5.31953H80.6791C80.3845 5.31953 80.1257 5.50777 80.0344 5.78729C79.9431 6.06682 80.0409 6.37177 80.28 6.54588L84.4071 9.54447L82.8306 14.3962C82.7393 14.6767 82.84 14.9817 83.0791 15.1539C83.1977 15.2395 83.337 15.2829 83.4762 15.2829C83.6155 15.2829 83.7548 15.2395 83.8744 15.1529L88.0005 12.1553L92.1257 15.1529C92.3638 15.3261 92.6847 15.3261 92.9228 15.1539C93.1619 14.9817 93.2617 14.6767 93.1704 14.3953L91.5939 9.54447L95.7219 6.54588C95.96 6.37177 96.0588 6.06682 95.9666 5.78729Z"
+                    fill="#FFB300"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p>
+            ¡Super! Llamamos por una primera fuga, que detectaron y repararon
+            sin problemas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Secure payment -->
+      <div class="flex flex-col items-center gap-4">
+        <p class="text-center">
+          Paga nuestros servicios de
+          <strong>manera segura y en cuotas</strong> en:
+        </p>
+        <img
+          src="assets/images/webpay-icon.svg"
+          alt="Ícono de WebPay"
+          class="w-32 h-auto"
+        />
+      </div>
+    </div>
+
+    <!-- Call to action -->
+    <div
+      class="bg-radial-[at_50%_25%] from-10% from-primary to-[#FFB800] to-150% md:bg-radial-[at_30%_50%] relative"
+    >
+      <div
+        class="absolute inset-0 bg-[url(images/hero-mobile-bg.png)] bg-cover bg-center"
+      ></div>
+      <div
+        class="container relative z-10 flex flex-col items-center gap-10 py-20 md:gap-14 md:flex-row md:justify-center"
+      >
+        <div class="flex flex-col gap-6 md:gap-2">
+          <h2 class="text-3xl font-bold text-center text-white md:text-left">
+            Las fugas de agua causan daño
+          </h2>
+          <p class="text-center text-white md:text-left">
+            No esperes a que el costo de la reparación se triplique solo por no
+            actuar a tiempo.
+          </p>
+        </div>
+        <a
+          href="#lead-form"
+          data-cta-button-source="cta"
+          class="px-5 py-4 text-white rounded-full shadow-lg cursor-pointer bg-accent hover:bg-accent/90"
+          >Quiero reparar mi fuga</a
+        >
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="container flex flex-col items-center gap-10 py-20 md:gap-14">
+      <!-- Section title -->
+      <div class="flex flex-col gap-6 md:gap-2">
+        <h2 class="text-3xl font-bold text-center">
+          ¿Tienes preguntas? <span class="text-primary">Te ayudamos</span>
+        </h2>
+        <p class="text-center">
+          Resolvemos tus dudas más frecuentes para que tomes la mejor decisión
+          con total tranquilidad.
+        </p>
+      </div>
+
+      <!-- Section content -->
+      <div id="faq" class="flex flex-col md:max-w-xl md:w-full">
+        <div class="border-b border-gray-300 faq-item">
+          <div
+            class="flex items-center gap-2 px-1 py-4 cursor-pointer faq-question"
+          >
+            <svg
+              class="transition-transform duration-200"
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.5 6.5H12.5M6.5 0.5V12.5"
+                stroke="#FFB300"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h3>¿Cómo detectan las fugas de agua sin romper?</h3>
+          </div>
+          <div class="hidden px-1 pb-4 text-gray-600 faq-answer">
+            Utilizamos equipos de ultrasonido, gas trazador y termografía que
+            nos permiten identificar el punto exacto sin dañar muros ni pisos.
+          </div>
+        </div>
+
+        <div class="border-b border-gray-300 faq-item">
+          <div
+            class="flex items-center gap-2 px-1 py-4 cursor-pointer faq-question"
+          >
+            <svg
+              class="transition-transform duration-200"
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.5 6.5H12.5M6.5 0.5V12.5"
+                stroke="#FFB300"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h3>¿Cuánto tiempo tarda la reparación?</h3>
+          </div>
+          <div class="hidden px-1 pb-4 text-gray-600 faq-answer">
+            Depende del tipo de fuga, pero normalmente entre 1 y 3 horas.
+          </div>
+        </div>
+
+        <div class="border-b border-gray-300 faq-item">
+          <div
+            class="flex items-center gap-2 px-1 py-4 cursor-pointer faq-question"
+          >
+            <svg
+              class="transition-transform duration-200"
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.5 6.5H12.5M6.5 0.5V12.5"
+                stroke="#FFB300"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h3>¿El servicio cubre todos los tipos de fuga?</h3>
+          </div>
+          <div class="hidden px-1 pb-4 text-gray-600 faq-answer">
+            Sí, atendemos fugas en muros, pisos, techos, calefacción y estanques
+            de agua.
+          </div>
+        </div>
+
+        <div class="border-b border-gray-300 faq-item">
+          <div
+            class="flex items-center gap-2 px-1 py-4 cursor-pointer faq-question"
+          >
+            <svg
+              class="transition-transform duration-200"
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.5 6.5H12.5M6.5 0.5V12.5"
+                stroke="#FFB300"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h3>¿Necesito preparar algo antes de la visita?</h3>
+          </div>
+          <div class="hidden px-1 pb-4 text-gray-600 faq-answer">
+            Solo asegúrate de que el área esté accesible. Nosotros llevamos todo
+            lo necesario.
+          </div>
+        </div>
+
+        <div class="border-b border-gray-300 faq-item">
+          <div
+            class="flex items-center gap-2 px-1 py-4 cursor-pointer faq-question"
+          >
+            <svg
+              class="transition-transform duration-200"
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.5 6.5H12.5M6.5 0.5V12.5"
+                stroke="#FFB300"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h3>¿Ofrecen garantía por el trabajo realizado?</h3>
+          </div>
+          <div class="hidden px-1 pb-4 text-gray-600 faq-answer">
+            Sí, ofrecemos garantía por todas nuestras reparaciones.
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="#lead-form"
+        data-cta-button-source="faq"
+        class="px-5 py-4 text-white rounded-full shadow-lg cursor-pointer bg-accent hover:bg-accent/90"
+        >Quiero agendar una visita</a
+      >
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#310060] text-white py-10 md:pt-20">
+      <div class="container flex flex-col items-center gap-10 md:gap-20">
+        <div class="flex flex-col gap-10 md:flex-row">
+          <div class="flex flex-col gap-10">
+            <div class="flex flex-col items-center gap-6 md:items-start">
+              <img
+                src="assets/images/home-fugas-logo.svg"
+                alt="Logo Home Fugas"
+                class="w-24 h-auto"
+              />
+              <p class="text-center md:text-left">
+                Detectamos fugas de agua en casas, piscinas, calefacción y
+                tuberías. Atención rápida en la Región Metropolitana y
+                Valparaíso.
+              </p>
+            </div>
+            <div class="flex flex-col items-center gap-2 md:items-start">
+              <h4 class="text-lg font-bold">Escríbenos</h4>
+              <a href="mailto:contacto@homefugas.cl" class="text-accent"
+                >contacto@homefugas.cl</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-10">
+            <div class="flex flex-col gap-6">
+              <div class="flex flex-col items-center gap-2 md:items-start">
+                <h4 class="text-lg font-bold">Santiago</h4>
+                <ul>
+                  <li class="text-center md:text-left">
+                    Teléfono:
+                    <a href="tel:+56226235975" class="text-accent"
+                      >+56 2 2623 59 75</a
+                    >
+                  </li>
+                  <li class="text-center md:text-left">
+                    Dirección: Calle Nueva #1885 of 104, Huechuraba.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex flex-col gap-6">
+              <div class="flex flex-col items-center gap-2 md:items-start">
+                <h4 class="text-lg font-bold">Viña del Mar</h4>
+                <ul>
+                  <li class="text-center md:text-left">
+                    WhatsApp:
+                    <a
+                      href="https://api.whatsapp.com/send?phone=56966139505"
+                      class="text-accent"
+                      >+56 9 6613 95 05</a
+                    >
+                  </li>
+                  <li class="text-center md:text-left">
+                    Dirección: Avenida 1 Norte #461 Of. 703.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col items-center w-full gap-4 pt-6 border-t border-white/30 md:flex-row md:justify-between"
+        >
+          <p>HomeFugas.cl © 2025</p>
+          <!-- <p>Diseñado por <a href="https://evolto.tech" class="text-accent">Evolto</a></p> -->
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>

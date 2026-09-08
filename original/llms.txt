@@ -1,0 +1,17 @@
+# llms.txt for homefugas.cl
+# Purpose: Leak detection services landing page in Chile
+
+User-agent: *
+Allow: /
+
+# Content usage
+Purpose: Commercial service information
+Language: es-CL
+Region: Chile
+
+# Ownership
+Owner: Homefugas
+Website: https://homefugas.cl
+
+# Contact
+Contact: https://homefugas.cl

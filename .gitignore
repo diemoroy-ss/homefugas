@@ -1,0 +1,20 @@
+# Dependencies
+/node_modules
+/.pnpm
+/.yarn
+
+# Next.js build output
+/.next/
+/out/
+
+# Logs & Environment
+/logs/
+*.log
+.env
+.env*.local
+
+# OS / Editor files
+.DS_Store
+*.pem
+.vscode/
+.idea/

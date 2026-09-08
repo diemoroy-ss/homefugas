@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6, button {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.bg-radial-hero {
+  background: radial-gradient(at 50% 25%, #7500E5 10%, #FFB800 200%);
+}
+
+@media (min-width: 768px) {
+  .bg-radial-hero {
+    background: radial-gradient(at 30% 50%, #7500E5 10%, #FFB800 120%);
+  }
+}
+
+.bg-radial-cta {
+  background: radial-gradient(at 50% 25%, #7500E5 10%, #FFB800 150%);
+}
+
+@media (min-width: 768px) {
+  .bg-radial-cta {
+    background: radial-gradient(at 30% 50%, #7500E5 10%, #FFB800 150%);
+  }
+}

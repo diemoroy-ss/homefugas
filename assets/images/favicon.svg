@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+    <linearGradient id="dropGradFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#favGrad)" />
+  <!-- House outline -->
+  <path d="M 32 10 L 52 28 L 44 28 L 44 52 L 20 52 L 20 28 L 12 28 Z" fill="#F59E0B" />
+  <!-- Water Drop overlay -->
+  <path d="M 32 18 C 32 18 44 34 44 42 C 44 48.6 38.6 54 32 54 C 25.4 54 20 48.6 20 42 C 20 34 32 18 32 18 Z" fill="url(#dropGradFav)" />
+  <circle cx="28" cy="38" r="3" fill="#FFFFFF" opacity="0.9" />
+</svg>
