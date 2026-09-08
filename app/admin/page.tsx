@@ -127,13 +127,25 @@ export default function AdminPage() {
 
       if (!ALLOWED_EMAILS.includes(email)) {
         setAuthError(
-          `Acceso Denegado: El correo "${email}" no está autorizado.`
+          `Acceso Denegado: El correo "${email}" no está autorizado para acceder al panel.`
         );
         await signOut(auth);
       }
     } catch (error: any) {
-      console.error('Error al iniciar sesión con Google:', error);
-      setAuthError('Error al autenticar con Google. Por favor reintenta.');
+      console.error('Error detallado de Google Auth:', error);
+      if (error.code === 'auth/unauthorized-domain') {
+        setAuthError(
+          'Dominio no Autorizado: Debes agregar "homefugas.cl" en la Consola de Firebase -> Authentication -> Configuración -> Dominios Autorizados.'
+        );
+      } else if (error.code === 'auth/popup-blocked') {
+        setAuthError(
+          'Ventana Emergente Bloqueada: Por favor habilita los popups en tu navegador para continuar.'
+        );
+      } else if (error.code === 'auth/popup-closed-by-user') {
+        setAuthError('Se cerró la ventana de autenticación antes de completar el inicio de sesión.');
+      } else {
+        setAuthError(`Error de autenticación (${error.code || 'Auth Error'}): ${error.message || 'Por favor reintenta.'}`);
+      }
     }
   };
 
