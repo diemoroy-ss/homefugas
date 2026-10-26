@@ -1,6 +1,24 @@
+'use client';
+
 import React from 'react';
 
 export const Footer: React.FC = () => {
+  const handleWhatsAppClick = () => {
+    if (typeof window !== 'undefined') {
+      if ((window as any).dataLayer) {
+        (window as any).dataLayer.push({ cta_button_source: 'footer_whatsapp' });
+        (window as any).dataLayer.push({ event: 'lead_whatsapp_button_click' });
+      }
+      if ((window as any).gtag) {
+        (window as any).gtag('event', 'contact', {
+          event_category: 'whatsapp',
+          event_label: 'footer_whatsapp',
+          send_to: 'AW-18438707677',
+        });
+      }
+    }
+  };
+
   return (
     <footer className="bg-[#310060] text-white py-10 md:pt-20">
       <div className="container flex flex-col items-center gap-10 md:gap-20 mx-auto px-4 md:px-8 max-w-6xl">
@@ -39,6 +57,7 @@ export const Footer: React.FC = () => {
                     href="https://api.whatsapp.com/send?phone=56966139505"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={handleWhatsAppClick}
                     className="text-accent font-semibold hover:underline"
                   >
                     +56 9 6613 95 05

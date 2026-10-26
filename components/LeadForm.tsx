@@ -38,12 +38,21 @@ export const LeadForm: React.FC = () => {
 
       if (data.status === 'success') {
         setIsSuccess(true);
-        if (typeof window !== 'undefined' && (window as any).dataLayer) {
-          (window as any).dataLayer.push({
-            event: 'lead_form_success',
-            commune: commune,
-            region: 'Valparaíso',
-          });
+        if (typeof window !== 'undefined') {
+          if ((window as any).dataLayer) {
+            (window as any).dataLayer.push({
+              event: 'lead_form_success',
+              commune: commune,
+              region: 'Valparaíso',
+            });
+          }
+          if ((window as any).gtag) {
+            (window as any).gtag('event', 'generate_lead', {
+              event_category: 'engagement',
+              event_label: commune,
+              send_to: 'AW-18438707677',
+            });
+          }
         }
       } else {
         setErrorMessage(data.message || 'Se produjo un error. Por favor, inténtalo nuevamente.');
@@ -52,12 +61,21 @@ export const LeadForm: React.FC = () => {
       console.error('Form submission error:', err);
       // Resilience fallback
       setIsSuccess(true);
-      if (typeof window !== 'undefined' && (window as any).dataLayer) {
-        (window as any).dataLayer.push({
-          event: 'lead_form_success',
-          commune: commune,
-          region: 'Valparaíso',
-        });
+      if (typeof window !== 'undefined') {
+        if ((window as any).dataLayer) {
+          (window as any).dataLayer.push({
+            event: 'lead_form_success',
+            commune: commune,
+            region: 'Valparaíso',
+          });
+        }
+        if ((window as any).gtag) {
+          (window as any).gtag('event', 'generate_lead', {
+            event_category: 'engagement',
+            event_label: commune,
+            send_to: 'AW-18438707677',
+          });
+        }
       }
     } finally {
       setIsSubmitting(false);
@@ -99,6 +117,21 @@ export const LeadForm: React.FC = () => {
               href="https://api.whatsapp.com/send?phone=56966139505&text=Hola%20Home%20Fugas,%20tengo%20una%20emergencia%20en%20la%20V%20Regi%C3%B3n"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  if ((window as any).dataLayer) {
+                    (window as any).dataLayer.push({ cta_button_source: 'form_success_whatsapp' });
+                    (window as any).dataLayer.push({ event: 'lead_whatsapp_button_click' });
+                  }
+                  if ((window as any).gtag) {
+                    (window as any).gtag('event', 'contact', {
+                      event_category: 'whatsapp',
+                      event_label: 'form_success_whatsapp',
+                      send_to: 'AW-18438707677',
+                    });
+                  }
+                }
+              }}
               className="text-accent font-bold hover:underline inline-block mt-2"
             >
               Escríbenos por WhatsApp

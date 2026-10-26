@@ -41,6 +41,24 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-TX895956');`,
           }}
         />
+
+        {/* Google Ads tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18438707677"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-ads-gtag"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18438707677');
+            `,
+          }}
+        />
       </head>
       <body className="text-gray-700 bg-gray-100 antialiased">
         {/* Google Tag Manager (noscript) */}

@@ -4,9 +4,18 @@ import React from 'react';
 
 export const Header: React.FC = () => {
   const handleWhatsAppClick = () => {
-    if (typeof window !== 'undefined' && (window as any).dataLayer) {
-      (window as any).dataLayer.push({ cta_button_source: 'whatsapp_button' });
-      (window as any).dataLayer.push({ event: 'lead_whatsapp_button_click' });
+    if (typeof window !== 'undefined') {
+      if ((window as any).dataLayer) {
+        (window as any).dataLayer.push({ cta_button_source: 'whatsapp_button' });
+        (window as any).dataLayer.push({ event: 'lead_whatsapp_button_click' });
+      }
+      if ((window as any).gtag) {
+        (window as any).gtag('event', 'contact', {
+          event_category: 'whatsapp',
+          event_label: 'header_whatsapp_button',
+          send_to: 'AW-18438707677',
+        });
+      }
     }
   };
 
