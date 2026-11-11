@@ -114,7 +114,7 @@ export const LeadForm: React.FC = () => {
           <p className="text-center">
             ¿Tienes una emergencia? <br />
             <a
-              href="https://api.whatsapp.com/send?phone=56966139505&text=Hola%20Home%20Fugas,%20tengo%20una%20emergencia%20en%20la%20V%20Regi%C3%B3n"
+              href="https://api.whatsapp.com/send?phone=56934075797&text=Hola%20Home%20Fugas,%20tengo%20una%20emergencia%20en%20la%20V%20Regi%C3%B3n"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {

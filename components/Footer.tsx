@@ -54,13 +54,13 @@ export const Footer: React.FC = () => {
                 <li className="text-center md:text-left">
                   <strong className="text-white">WhatsApp &amp; Emergencias:</strong>{' '}
                   <a
-                    href="https://api.whatsapp.com/send?phone=56966139505"
+                    href="https://api.whatsapp.com/send?phone=56934075797"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={handleWhatsAppClick}
                     className="text-accent font-semibold hover:underline"
                   >
-                    +56 9 6613 95 05
+                    +56 9 3407 5797
                   </a>
                 </li>
 

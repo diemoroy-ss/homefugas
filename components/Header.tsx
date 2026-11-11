@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
         rel="noopener noreferrer"
         onClick={handleWhatsAppClick}
         className="px-6 py-4 rounded-full cursor-pointer bg-green-500 hover:bg-green-600 border border-green-900 transition flex items-center justify-center"
-        href="https://api.whatsapp.com/send?phone=56966139505"
+        href="https://api.whatsapp.com/send?phone=56934075797"
       >
         <img
           className="w-24 h-auto"
